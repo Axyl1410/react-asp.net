@@ -1,12 +1,14 @@
 import React, { memo } from "react";
 import styles from "./Anchor.module.css";
 
-const Anchor = memo(function Anchor({
-  href,
-  text,
-  className: additionalClassNames,
-}) {
-  const classNames = additionalClassNames ? ` ${additionalClassNames}` : "";
+interface AnchorProps {
+  href: string;
+  text: string;
+  className?: string;
+}
+
+const Anchor: React.FC<AnchorProps> = memo(({ href, text, className }) => {
+  const classNames = className ? ` ${className}` : "";
 
   return (
     <a
