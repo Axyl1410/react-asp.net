@@ -1,0 +1,34 @@
+# Dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# Build output
+/dist
+/build
+
+# Cache and temporary files
+.cache
+.DS_Store
+.env.local
+.env.*.local
+/temp
+
+# IDE and editor files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj*
+*.sln
+*.sw?
+
+# Misc
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+#lock
+pnpm-lock.yaml
