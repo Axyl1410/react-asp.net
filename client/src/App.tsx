@@ -1,18 +1,11 @@
 import { lazy, Suspense, useEffect } from "react";
-import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
+import MasterLayout from "./components/MasterLayout";
 
 const Home = lazy(() => import("./pages/Home"));
 const Nopage = lazy(() => import("./pages/Nopage"));
 
 export default function App() {
-  return (
-    <BrowserRouter>
-      <AppContent />
-    </BrowserRouter>
-  );
-}
-
-function AppContent() {
   const location = useLocation();
 
   useEffect(() => {
@@ -25,7 +18,7 @@ function AppContent() {
     <>
       <Suspense fallback={<div>Loading...</div>}>
         <Routes location={location} key={location.pathname}>
-          <Route index path="/" element={<Home />} />
+          <Route index path="/" element={<MasterLayout child={<Home />} />} />
           <Route path="*" element={<Nopage />} />
         </Routes>
       </Suspense>
